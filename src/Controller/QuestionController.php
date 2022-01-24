@@ -2,10 +2,11 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class QuestionController
+class QuestionController extends AbstractController
 {
     /**
      * @Route("/")
@@ -21,9 +22,7 @@ class QuestionController
      */
     public function show($ma_question)
     {
-        return new Response(sprintf(
-            'La question posée est : %s',
-            $ma_question
-        ));
+        return $this->render('question/show.htm.twig', [
+            'question' =>sprintf('La question posée est : %s', $ma_question)]);
     }
 }
