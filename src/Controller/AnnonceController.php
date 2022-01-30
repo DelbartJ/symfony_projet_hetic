@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment;
 
-class QuestionController extends AbstractController
+class AnnonceController extends AbstractController
 {
     /**
      * @Route("/", name="app_annonce")
@@ -20,10 +20,10 @@ class QuestionController extends AbstractController
     }
 
     /**
-     * @Route("/questions/{research}", name="app_show")
+     * @Route("/annonces/{research}", name="app_search")
      */
     public function search($research)
     {
-        "article recherché : ", $research
+        "article recherché : " . $research;
     }
 }
